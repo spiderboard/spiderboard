@@ -1,42 +1,62 @@
 <!DOCTYPE html><html lang="en"><head><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.0/jquery.js" type="text/javascript"></script><script src="scripts/all-librarys.js" type="text/javascript"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/jqgrid/4.6.0/js/i18n/grid.locale-en.js"></script><script src="https://cdn.jsdelivr.net/jqgrid/4.6.0/jquery.jqGrid.min.js"></script><script src="scripts/all-customs.js" type="text/javascript"></script><link rel="stylesheet" type="text/css" href="styles/librarys-concat.css"><link rel="stylesheet" type="text/css" href="styles/main.css"><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"><script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script><link rel="stylesheet" href="styles/table_styles.css"><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"><meta charset="UTF-8"><title>SpiderBoard</title></head><body><h3><i class="fa fa-database" aria-hidden="true"></i> SpiderBoard</h3><div class="wrapper"><table id="jqGrid"></table><div id="jqGridPager"></div></div><script type="text/javascript">$(document).ready(function () {
         $("#jqGrid").jqGrid({
-            url: 'http://lowcost-env.mri5njt8g2.us-west-2.elasticbeanstalk.com/grants?page=1&page_size=100',
+            url: 'http://lowcost-env.mri5njt8g2.us-west-2.elasticbeanstalk.com/grants?page_size=20',
+            mtype: "GET",
             datatype: "json",
-            jsonReader: {root: "Data"},
+            jsonReader: {
+                root: "Data",
+                //page:  function(obj) { console.error("!!!", obj); return 1; },
+                total: function(obj) { return obj.Count / 20; },
+                records: function(obj) { return obj.Count; },
+            },
             colModel: [
-                {label: 'Date', name: '', width: 75, sortable: false},
+                {label: 'Date', name: '', width: 75, formatter: dateStyles, sortable: false},
                 {label: 'Type', name: 'itemType', width: 60, formatter: typeStyles, sortable: false},
-                {label: 'Source', name: 'url', formatter: 'link', width: 210, sortable: false},
+                {label: 'Source', name: 'url', formatter: linkStyles, width: 210, sortable: false},
                 {label: 'Title', name: 'title', width: 200, formatter: titleStyles, sortable: false},
                 {label: 'Content preview', name: 'text', width: 580, formatter: prewievStyles, sortable: false},
                 {label: 'Contacts', name: 'contacts', width: 280, formatter: contactsStyles, sortable: false},
                 {label: 'Actions', width: 350, sortable: false, formatter: actionsButtons, sortable: false}
             ],
             viewrecords: true, // show the current page, data rang and total records on the toolbar
-            // width: 1900,
             height: 750,
             autowidth: true,
             rowheight: 20,
-            rowNum: 16,
+            page: 1,
+            rowNum: 20,
+            datatype: "json",
+            caption: "<div class='button_container'><div class='add_record_button'>" +
+            " + ADD NEW RECORD</div><div class='add_record_button'> FILTER</div></div>",
             caption: "<div class='button_container'><div class='add_record_button'><i class='fa fa-exclamation-circle fa-lg' aria-hidden='true'></i>"+
             " IMPORTANT</div><div class='add_record_button'><i class='fa fa-exclamation-circle fa-lg' aria-hidden='true'></i> SKIPPED</div><div class='add_record_button'><i class='fa fa-check-circle-o fa-lg' aria-hidden='true'></i> DONE</div></div>",
             pager: "#jqGridPager"
         });
+        //jQuery("#jqGrid").setGridParam({rowNum: 16}).trigger("reloadGrid");
     });
 
+    function dateStyles(v) {
+        return '<div style="height: 35px; margin: 5px; font-size: 12px; display:flex; align-items: center; justify-content: center">' +
+         '<i class="fa fa-calendar-check-o" style="color: #1756ef;" aria-hidden="true"></i>12.12.2012' + '</div>';
+    }
 
     function typeStyles(v) {
-        return '<div style="height: 35px; margin: 5px; font-size: 14px; display:flex; align-items: center; justify-content: center">' + v + '</div>';
+        return '<div style="height: 35px; margin: 5px; font-size: 12px; display:flex; align-items: center; justify-content: center">' + v + '</div>';
     }
 
     function titleStyles(v) {
-        return '<div style="height: 35px; margin: 5px; font-size: 12px; overflow: hidden;">' + v + '</div>';
+        return '<div style="height: 35px; margin: 5px; font-size: 12px; overflow: hidden; color: #000;">' + v + '</div>';
     }
+
+    function linkStyles(v) {
+        return '<a target="_blank" style="color: #3f51b5; font-size: 12px;" href="' +v+ '"+><i class="fa fa-external-link" aria-hidden="true"></i>'+' '+v+'</a>';
+    }
+
     function prewievStyles(v) {
-        return '<div style="height: 20px; font-size: 12px; width: 590px; padding: 5px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis">' + v + '</div>';
+        return '<div style="height: 20px; font-size: 12px; color: #000; width: 590px; padding: 5px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis">' + v + '</div>';
     }
     function contactsStyles(v) {
-        return '<div style="display: flex; font-size: 14px; flex-wrap: wrap; width: 280px; padding: 5px; height: 45px; overflow: hidden">' + v + '</p></div>';
+        return '<div style="display: flex; font-style: italic; font-size: 12px; width: 280px; padding: 5px; height: 45px; overflow: hidden">'+
+        '<i class="fa fa-pencil-square-o" style="color: #227b19;" aria-hidden="true"></i>'+ v + '</p></div>';
     }
 
     function actionsButtons() {
