@@ -792,7 +792,6 @@ button.ui-button::-moz-focus-inner {
 .ui-selectable-helper {
   position: absolute;
   z-index: 100;
-  border: 1px dotted black;
 }
 
 .ui-selectmenu-menu {
@@ -1168,8 +1167,9 @@ a.ui-button:active,
 .ui-state-highlight,
 .ui-widget-content .ui-state-highlight,
 .ui-widget-header .ui-state-highlight {
-  border: 1px solid #dad55e;
+  border: 1px solid #9b9b9b;
   background: #fffa90;
+  border-bottom: 0;
   color: #777620;
 }
 
@@ -2385,7 +2385,6 @@ div.tablediv > .table-bordered {
 .ui-jqgrid .ui-jqgrid-pager,
 .ui-jqgrid .ui-jqgrid-toppager {
   border-left-width: 0px;
-  border-top: 1px solid #ddd;
   /*padding : 4px 0px;*/
   position: relative;
   /*height: auto; */
@@ -2394,7 +2393,6 @@ div.tablediv > .table-bordered {
 }
 
 .ui-jqgrid .ui-jqgrid-toppager {
-  border-top-width: 0;
   border-bottom: 1px solid #ddd;
 }
 
@@ -2421,7 +2419,6 @@ div.tablediv > .table-bordered {
 }
 
 .ui-jqgrid .ui-pager-control .ui-pager-table td {
-  border-top: 0px none !important;
   min-height: 20px !important;
 }
 
@@ -2476,7 +2473,7 @@ div.tablediv > .table-bordered {
 .ui-separator-li {
   height: 2px;
   border: none;
-  border-top: 2px solid #ccc;
+  border-top: 1px solid #ccc;
   /*default*/
   margin: 0;
   padding: 0;
@@ -3234,7 +3231,6 @@ td.menu_text {
   position: relative;
   border-left: 0px none;
   border-right: 0px none;
-  border-top: 0px none;
 }
 
 .ui-jqgrid .ui-jqgrid-title {
@@ -3268,7 +3264,6 @@ td.menu_text {
   padding: 0em;
   overflow-x: hidden;
   border-left: 0px none !important;
-  border-top: 0px none !important;
   border-right: 0px none !important;
 }
 
@@ -3298,7 +3293,6 @@ td.menu_text {
   overflow: hidden;
   white-space: nowrap;
   text-align: center;
-  border-top: 0px none;
   border-bottom: 0px none;
 }
 
@@ -3366,11 +3360,7 @@ td.menu_text {
   cursor: pointer;
 }
 
-.ui-jqgrid tr.ui-search-toolbar th {
-  border-top-width: 1px !important;
-  border-top-color: inherit !important;
-  border-top-style: ridge !important;
-}
+
 
 tr.ui-search-toolbar input {
   margin: 1px 0px 0px 0px;
@@ -3407,9 +3397,7 @@ tr.ui-search-toolbar select {
 .ui-jqgrid tr.jqgrow td {
   font-weight: normal;
   overflow: hidden;
-  white-space: pre;
-  height: 22px;
-  padding: 0 2px 0 2px;
+  white-space: normal !important;
   border-bottom-width: 1px;
   border-bottom-color: inherit;
   border-bottom-style: solid;
@@ -3485,9 +3473,6 @@ tr.ui-search-toolbar select {
   margin: 0em;
   padding: 0em;
   overflow: hidden;
-  border-left: 0px none !important;
-  border-top: 0px none !important;
-  border-right: 0px none !important;
 }
 
 .ui-jqgrid .ui-jqgrid-ftable {
@@ -3501,9 +3486,6 @@ tr.ui-search-toolbar select {
   white-space: nowrap;
   height: 21px;
   padding: 0 2px 0 2px;
-  border-top-width: 1px;
-  border-top-color: inherit;
-  border-top-style: solid;
 }
 
 .ui-jqgrid tr.footrow-ltr td {
@@ -3627,7 +3609,6 @@ tr.ui-search-toolbar select {
 .ui-jqgrid .ui-jqgrid-toppager {
   border-left: 0px none !important;
   border-right: 0px none !important;
-  border-top: 0px none !important;
   margin: 0px !important;
   padding: 0px !important;
   position: relative;
@@ -3677,9 +3658,7 @@ tr.ui-search-toolbar select {
   border-bottom-style: solid;
 }
 
-.ui-jqgrid .ui-subgrid td.subgrid-data {
-  border-top: 0px none !important;
-}
+
 
 .ui-jqgrid .ui-subgrid td.subgrid-cell {
   border-width: 0px 0px 1px 0px;
@@ -3827,9 +3806,6 @@ tr.ui-search-toolbar select {
 
 .ui-jqdialog-content td.EditButton {
   text-align: right;
-  border-top: 0px none;
-  border-left: 0px none;
-  border-right: 0px none;
   padding-bottom: 5px;
   padding-top: 5px;
 }
@@ -3837,7 +3813,6 @@ tr.ui-search-toolbar select {
 .ui-jqdialog-content td.navButton {
   text-align: center;
   border-left: 0px none;
-  border-top: 0px none;
   border-right: 0px none;
   padding-bottom: 5px;
   padding-top: 5px;
