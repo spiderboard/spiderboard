@@ -1168,14 +1168,12 @@ a.ui-button:active,
 .ui-widget-content .ui-state-highlight,
 .ui-widget-header .ui-state-highlight {
   border: 1px solid #9b9b9b;
-  background: #fffa90;
   border-bottom: 0;
   color: #777620;
 }
 
 .ui-state-checked {
   border: 1px solid #dad55e;
-  background: #fffa90;
 }
 
 .ui-state-highlight a,
@@ -1245,37 +1243,37 @@ a.ui-button:active,
 
 .ui-icon,
 .ui-widget-content .ui-icon {
-  background-image: url("images/ui-icons_444444_256x240.png");
+  background-image: url("images/nui-icons_444444_256x240.png");
 }
 
 .ui-widget-header .ui-icon {
-  background-image: url("images/ui-icons_444444_256x240.png");
+  background-image: url("images/nui-icons_444444_256x240.png");
 }
 
 .ui-state-hover .ui-icon,
 .ui-state-focus .ui-icon,
 .ui-button:hover .ui-icon,
 .ui-button:focus .ui-icon {
-  background-image: url("images/ui-icons_555555_256x240.png");
+  background-image: url("images/nui-icons_555555_256x240.png");
 }
 
 .ui-state-active .ui-icon,
 .ui-button:active .ui-icon {
-  background-image: url("images/ui-icons_ffffff_256x240.png");
+  background-image: url("images/nui-icons_ffffff_256x240.png");
 }
 
 .ui-state-highlight .ui-icon,
 .ui-button .ui-state-highlight.ui-icon {
-  background-image: url("images/ui-icons_777620_256x240.png");
+  background-image: url("images/nui-icons_777620_256x240.png");
 }
 
 .ui-state-error .ui-icon,
 .ui-state-error-text .ui-icon {
-  background-image: url("images/ui-icons_cc0000_256x240.png");
+  background-image: url("images/nui-icons_cc0000_256x240.png");
 }
 
 .ui-button .ui-icon {
-  background-image: url("images/ui-icons_777777_256x240.png");
+  background-image: url("images/nui-icons_777777_256x240.png");
 }
 
 /* positioning */
@@ -3606,13 +3604,15 @@ tr.ui-search-toolbar select {
   height: auto;
 }
 
+/*custom button height*/
+
 .ui-jqgrid .ui-jqgrid-toppager {
   border-left: 0px none !important;
   border-right: 0px none !important;
   margin: 0px !important;
   padding: 0px !important;
   position: relative;
-  height: 25px !important;
+  height: 50px !important;
   white-space: nowrap;
   overflow: hidden;
 }
@@ -3997,142 +3997,4 @@ div.ui-jqgrid .selected-row td {
 
 .ui-jqgrid .ui-ellipsis {
   text-overflow: ellipsis;
-}
-/* Multiselect
-----------------------------------*/
-
-.ui-multiselect {
-  border: solid 1px;
-  font-size: 0.8em;
-}
-
-.ui-multiselect ul {
-  -moz-user-select: none;
-}
-
-.ui-multiselect li {
-  margin: 0;
-  padding: 0;
-  cursor: default;
-  line-height: 20px;
-  height: 20px;
-  font-size: 11px;
-  list-style: none;
-}
-
-.ui-multiselect li a {
-  color: #999;
-  text-decoration: none;
-  padding: 0;
-  display: block;
-  float: left;
-  cursor: pointer;
-}
-
-.ui-multiselect li.ui-draggable-dragging {
-  padding-left: 10px;
-}
-
-.ui-multiselect div.selected {
-  position: relative;
-  padding: 0;
-  margin: 0;
-  border: 0;
-  float: left;
-}
-
-.ui-multiselect ul.selected {
-  position: relative;
-  padding: 0;
-  overflow: auto;
-  overflow-x: hidden;
-  background: #fff;
-  margin: 0;
-  list-style: none;
-  border: 0;
-  position: relative;
-  width: 100%;
-}
-
-
-
-.ui-multiselect div.available {
-  position: relative;
-  padding: 0;
-  margin: 0;
-  border: 0;
-  float: left;
-  border-left: 1px solid;
-}
-
-.ui-multiselect ul.available {
-  position: relative;
-  padding: 0;
-  overflow: auto;
-  overflow-x: hidden;
-  background: #fff;
-  margin: 0;
-  list-style: none;
-  border: 0;
-  width: 100%;
-}
-
-.ui-multiselect ul.available li {
-  padding-left: 10px;
-}
-
-.ui-multiselect .ui-state-default {
-  border: none;
-  margin-bottom: 1px;
-  position: relative;
-  padding-left: 20px;
-}
-
-.ui-multiselect .ui-state-hover {
-  border: none;
-}
-
-.ui-multiselect .ui-widget-header {
-  border: none;
-  font-size: 11px;
-  margin-bottom: 1px;
-}
-
-.ui-multiselect .add-all {
-  float: right;
-  padding: 7px;
-}
-
-.ui-multiselect .remove-all {
-  float: right;
-  padding: 7px;
-}
-
-.ui-multiselect .search {
-  float: left;
-  padding: 4px;
-}
-
-.ui-multiselect .count {
-  float: left;
-  padding: 7px;
-}
-
-.ui-multiselect li span.ui-icon-arrowthick-2-n-s {
-  position: absolute;
-  left: 2px;
-}
-
-.ui-multiselect li a.action {
-  position: absolute;
-  right: 2px;
-  top: 2px;
-}
-
-.ui-multiselect input.search {
-  height: 14px;
-  padding: 1px;
-  opacity: 0.5;
-  margin: 4px;
-  width: 100px;
 }
