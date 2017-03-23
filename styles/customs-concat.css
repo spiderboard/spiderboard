@@ -359,18 +359,6 @@ h1 {
   font-weight: 700;
 }
 
-.buttonPressedSkip .buttonStyles .skp {
-  background-color: #d4d4d4;
-}
-
-.buttonPressedImportant .buttonStyles .imp {
-  background-color: #d4d4d4;
-}
-
-.buttonPressedDone .buttonStyles .dn {
-  background-color: #d4d4d4;
-}
-
 .dateStyles {
   height: 35px;
   margin: 5px;
@@ -564,4 +552,12 @@ h1 {
   color: #000;
   margin-left: 90px;
   width: 190px;
+}
+
+.filterButtonPressed {
+  background-color: #090!important;
+}
+
+.sideButtonPressed {
+  background-color: #d4d4d4!important;
 }
