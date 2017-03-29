@@ -1,4 +1,4 @@
 
-var host="http://shielded-fortress-95039.herokuapp.com";function validateForm(){var email=document.loginform.email.value;var pw=document.loginform.password.value;$.ajax({"url":host+"/login","method":"POST","data":{"email":email,"pw":pw},success:function(data){$(document).ready(function(){$("#user-not-found").hide();$("#bad-password").hide();if(data==="User not found"){$("#user-not-found").show();localStorage.setItem("auth",false);return false;}
-if(data==="Bad password"){$("#bad-password").show();localStorage.setItem("auth",false);return false;}});if(data!=="User not found"&&data!=="Bad password"){console.log("going to index")
-localStorage.setItem("auth",true);window.location.href="./index.html";}}});}
+var host="http://shielded-fortress-95039.herokuapp.com";function validateForm(){var email=document.loginform.email.value;var password=document.loginform.password.value;$.ajax({"url":host+"/login","method":"POST","data":{"email":email,"password":password},error:function(xhr){$("#user-not-found").hide();$("#bad-password").hide();if(xhr.responseText==="User not found"){$("#user-not-found").show();}
+if(xhr.responseText==="Bad password"){$("#bad-password").show();}
+localStorage.removeItem("auth");},success:function(data){localStorage.setItem("auth",data.api_key);window.location.href="./index.html";}});}
