@@ -1,3 +1,12 @@
+body {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
 h3 {
   margin-top: 100px;
   margin-bottom: 20px;
@@ -50,23 +59,16 @@ html {
   padding: 0;
 }
 
-body {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -ms-flex-align: center;
-  align-items: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-}
-
 h1 {
   color: #007fff;
 }
 
 .wrapper {
   position: relative;
+  width: 100%;
+}
+
+.wrapper .ui-jqgrid {
   width: 100%;
 }
 
@@ -82,6 +84,14 @@ h1 {
 .wrapper .ui-jqgrid tr.jqgrow td a {
   margin: 0 5px;
 }
+body,
+html {
+  width: 100%;
+  min-width: 960px;
+  height: 100%;
+  overflow-x: hidden;
+}
+
 .ui-widget {
   font-family: Arial,sans-serif;
   font-size: 14px;
@@ -388,6 +398,7 @@ h1 {
   background: #fff8f8;
   border-radius: 18px;
   color: #3f51b5;
+  width: 30px;
 }
 
 .unread .statusStyles {
@@ -427,20 +438,21 @@ h1 {
   -ms-flex-pack: center;
   justify-content: center;
   font-weight: 400;
+  width: 80px;
 }
 
 .linkStyles {
-  margin-left: 5px;
   color: #3f51b5;
   font-size: 12px;
   font-weight: 400;
+  text-align: center;
 }
 
 .previewStyles {
   height: 20px;
   font-size: 12px;
   color: #000;
-  width: 710px;
+  width: 610px;
   padding: 5px;
   overflow: hidden;
   white-space: nowrap;
@@ -454,14 +466,15 @@ h1 {
   display: flex;
   font-style: italic;
   font-size: 12px;
-  width: 330px;
+  width: 270px;
   padding: 5px;
   overflow: hidden;
   font-weight: 400;
 }
 
 .buttonStyles {
-  height: 35px;
+  width: 300px;
+  min-height: 35px;
   margin-left: 10px;
   display: -ms-flexbox;
   display: flex;
@@ -471,6 +484,253 @@ h1 {
   align-items: center;
   -ms-flex-pack: center;
   justify-content: center;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+#jqGrid_Status {
+  width: 43px;
+}
+
+#jqGrid_publication_date {
+  width: 75px;
+}
+
+#jqGrid_domain {
+  width: 93px;
+}
+
+#jqGrid_url {
+  width: auto;
+}
+
+#jqGrid_text {
+  width: 613px;
+}
+
+#jqGrid_contacts {
+  width: 273px;
+}
+
+#jqGrid_undefined {
+  width: 310px;
+}
+
+@media only screen and (min-width:1511px) and (min-width:1920px) {
+  #jqGrid_undefined {
+    width: 293px;
+  }
+}
+
+@media only screen and (min-width:1511px) and (max-width:1650px) {
+  .buttonStyles {
+    width: 190px;
+  }
+
+  .buttonStyles button {
+    width: 90px;
+  }
+
+  .contactsStyles {
+    width: 240px;
+  }
+
+  #jqGrid_Status {
+    width: 43px;
+  }
+
+  #jqGrid_publication_date {
+    width: 75px;
+  }
+
+  #jqGrid_domain {
+    width: 93px;
+  }
+
+  #jqGrid_url {
+    width: auto;
+  }
+
+  #jqGrid_text {
+    width: 613px;
+  }
+
+  #jqGrid_contacts {
+    width: 243px;
+  }
+
+  #jqGrid_undefined {
+    width: 200px;
+  }
+}
+
+@media only screen and (max-width:1510px) and (min-width:1251px) {
+  .buttonStyles {
+    width: 190px;
+  }
+
+  .buttonStyles button {
+    width: 90px;
+  }
+
+  .previewStyles {
+    height: 37px;
+    width: 450px;
+    white-space: normal;
+    font-weight: 400;
+    text-align: center;
+  }
+
+  .contactsStyles {
+    width: 240px;
+  }
+
+  #jqGrid_Status {
+    width: 43px;
+  }
+
+  #jqGrid_publication_date {
+    width: 75px;
+  }
+
+  #jqGrid_domain {
+    width: 93px;
+  }
+
+  #jqGrid_url {
+    width: auto;
+  }
+
+  #jqGrid_text {
+    width: 453px;
+  }
+
+  #jqGrid_contacts {
+    width: 243px;
+  }
+
+  #jqGrid_undefined {
+    width: 200px;
+  }
+}
+
+@media only screen and (max-width:1250px) and (min-width:1100px) {
+  .previewStyles {
+    height: 37px;
+    width: 350px;
+  }
+
+  .buttonStyles {
+    width: 190px;
+  }
+
+  .buttonStyles button {
+    width: 90px;
+  }
+
+  .linkStyles {
+    height: 37px;
+  }
+
+  .previewStyles {
+    height: 37px;
+    white-space: normal;
+    font-weight: 400;
+    text-align: center;
+  }
+
+  .contactsStyles {
+    height: 37px;
+    width: 190px;
+  }
+
+  #jqGrid_Status {
+    width: 43px;
+  }
+
+  #jqGrid_publication_date {
+    width: 75px;
+  }
+
+  #jqGrid_domain {
+    width: 93px;
+  }
+
+  #jqGrid_url {
+    width: auto;
+  }
+
+  #jqGrid_text {
+    width: 353px;
+  }
+
+  #jqGrid_contacts {
+    width: 193px;
+  }
+
+  #jqGrid_undefined {
+    width: 200px;
+  }
+}
+
+@media only screen and (max-width:1099px) {
+  .previewStyles {
+    height: 55px;
+    width: auto;
+  }
+
+  .buttonStyles {
+    width: 100px;
+  }
+
+  .buttonStyles button {
+    width: 90px;
+  }
+
+  .linkStyles {
+    height: 37px;
+    width: 300px;
+  }
+
+  .previewStyles {
+    height: 90px;
+    white-space: normal;
+    font-weight: 400;
+    text-align: center;
+  }
+
+  .contactsStyles {
+    height: 37px;
+    width: 180px;
+  }
+
+  #jqGrid_Status {
+    width: 43px;
+  }
+
+  #jqGrid_publication_date {
+    width: 75px;
+  }
+
+  #jqGrid_domain {
+    width: 93px;
+  }
+
+  #jqGrid_url {
+    width: 157px;
+  }
+
+  #jqGrid_text {
+    width: auto;
+  }
+
+  #jqGrid_contacts {
+    width: 183px;
+  }
+
+  #jqGrid_undefined {
+    width: 110px;
+  }
 }
 
 .modal {
@@ -665,19 +925,20 @@ h1 {
 }
 
 .header #logout-button {
-  width: 100px;
-  margin-right: 20px;
-  padding-left: 15px;
-  padding-right: 15px;
-  margin-top: 10px;
-  background-color: #e9e9e9;
-  height: 36px;
+  height: 25px;
+  font-family: Arial,sans-serif;
+  font-size: 10px;
+  margin: 5px;
+  background-color: #fafafa;
+  padding-left: 6px;
+  padding-right: 6px;
+  line-height: 22px;
   border: none;
   border-radius: 3px;
   text-decoration: none;
   display: inline-block;
   box-shadow: -1px 2px 3px rgba(163,163,163,.5);
-  color: #794f4f;
+  color: #1e1e1e;
   transition: all .5s;
 }
 
@@ -699,4 +960,44 @@ h1 {
 #jqgh_jqGrid_undefined,
 #jqgh_jqGrid_url {
   cursor: default;
+}
+
+table.ui-jqgrid-htable.ui-common-table {
+  width: 100%;
+}
+
+.ui-jqgrid .loading {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 101;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  vertical-align: middle;
+  font-weight: 700;
+  display: none;
+  border: none;
+  font-size: 34px;
+  color: #3f51b5;
+  padding-top: 20%;
+  background-color: rgba(0,0,0,.27);
+}
+
+#gsh_jqGrid_domain {
+  height: 25px;
+  width: 93px;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+#gsh_jqGrid_domain div {
+  height: inherit;
+  width: inherit;
 }

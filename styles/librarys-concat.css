@@ -2594,7 +2594,7 @@ div.tablediv > .table-bordered {
   border: 1px solid #ddd;
   /*default*/
   font-size: 14px;
-  background-color: #d9edf7;
+  background-color: black;
 }
 
 .ui-jqgrid .jqgrid-overlay {
@@ -3208,6 +3208,36 @@ td.menu_text {
 .search_buttons #bs_search {
   margin-left: 3px;
 }
+
+/*responsive design*/
+
+.ui-jqgrid .ui-jqgrid-toppager .ui-pager-control,
+.ui-jqgrid .ui-jqgrid-pager .ui-pager-control {
+  height: auto;
+}
+
+.ui-jqgrid .ui-pager-control td[id$="_toppager_center"],
+.ui-jqgrid .ui-pager-control td[id$="pager_center"] {
+  width: auto !important;
+  white-space: normal !important;
+  height: auto;
+}
+
+.ui-jqgrid .ui-pager-control td[id$="_toppager_right"],
+.ui-jqgrid .ui-pager-control td[id$="pager_right"] {
+  width: auto !important;
+  white-space: normal !important;
+  height: auto;
+}
+
+.ui-jqgrid .ui-jqgrid-bdiv,
+.ui-jqgrid .ui-jqgrid-view.table-responsive,
+.ui-jqgrid,
+.ui-jqgrid-pager,
+.ui-jqgrid-toppager,
+.ui-jqgrid-hdiv {
+  width: auto !important;
+}
 /*Grid*/
 
 .ui-jqgrid {
@@ -3376,6 +3406,7 @@ tr.ui-search-toolbar select {
   padding: 0;
   overflow: auto;
   text-align: left;
+  overflow-x: hidden;
 }
 
 .ui-jqgrid .ui-jqgrid-btable {
