@@ -1,1 +1,58 @@
-<!DOCTYPE html><html lang="en" id="body"><head><script src="scripts/all-librarys.js" type="text/javascript"></script><script src="scripts/main.js" type="text/javascript"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/jqgrid/4.6.0/js/i18n/grid.locale-en.js"></script><link rel="stylesheet" type="text/css" href="styles/librarys-concat.css"><link rel="stylesheet" type="text/css" href="styles/customs-concat.css"><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"><script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script><script src="https://use.fontawesome.com/f34d25a70c.js"></script><meta charset="UTF-8"><title>SpiderBoard</title></head><body><div class="header"><div class="space"></div><h3><i class="fa fa-database" aria-hidden="true"></i> <a href="/">SpiderBoard</a></h3><button id="logout-button"><i class="fa fa-sign-out" aria-hidden="true"></i>Logout</button></div><div class="wrapper"><table id="jqGrid"></table><div id="jqGridPager"></div><div id="last-updated-date"></div></div><div id="myModal" class="modal"><div class="modal-content"><div id="alertDate"></div><div id="alertTitle"></div><div id="alertContent"></div><p class="cont">Contacts:</p><div id="alertContacts"></div><p class="note">Notes:</p><textarea id="noteText"></textarea><div class="buttonContainer"><button onclick="skip()"><i class="fa fa-ban fa-lg" aria-hidden="true" style="color:red"></i>SKIP</button> <button onclick="importAnt()"><i class="fa fa-exclamation-circle fa-lg" aria-hidden="true" style="color:orange"></i>IMPORTANT</button> <button onclick="donE()"><i class="fa fa-check-circle-o fa-lg" aria-hidden="true" style="color:green"></i>DONE</button> <button class="updateNote" onclick="updateNote()"><i class="fa fa-check" aria-hidden="true"></i> OK</button> <button class="closeAlert" onclick="closeAlert()"><i class="fa fa-times" aria-hidden="true"></i>CANCEL</button></div></div></div><input type="hidden" id="myId" value="data"></body></html>
+<!DOCTYPE html>
+<html lang="en" id="body">
+<head>
+    <script src="scripts/all-librarys.js" type="text/javascript"></script>
+    <script src="scripts/main.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqgrid/4.6.0/js/i18n/grid.locale-en.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="styles/librarys-concat.css">
+    <link rel="stylesheet" type="text/css" href="styles/customs-concat.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script src="https://use.fontawesome.com/f34d25a70c.js"></script>
+    <meta charset="UTF-8">
+    <title>SpiderBoard</title>
+</head>
+<body>
+
+<div class="header">
+    <div class="space"></div>
+    <h3><i class="fa fa-database" aria-hidden="true"></i> <a href="/">SpiderBoard</a>
+    </h3>
+    <button id="logout-button"><i class="fa fa-sign-out" aria-hidden="true"></i>Logout</button>
+</div>
+
+<div class="wrapper">
+    <table id="jqGrid"></table>
+    <div id="jqGridPager"></div>
+    <div id="last-updated-date"></div>
+</div>
+
+
+<div id="myModal" class="modal">
+    <div class="modal-content">
+        <div id="alertDate"></div>
+        <div id="alertTitle"></div>
+        <div id="alertContent"></div>
+        <p class="cont">Contacts:</p>
+        <div id="alertContacts"></div>
+        <p class="note">Notes:</p>
+        <textarea id="noteText"></textarea>
+        <div class="buttonContainer">
+            <button onclick='skip()'><i class='fa fa-ban fa-lg' aria-hidden='true' style='color:red;'></i>SKIP
+            </button>
+            <button onclick='importAnt()'><i class='fa fa-exclamation-circle fa-lg' aria-hidden='true'
+                                             style='color:orange;'></i>IMPORTANT
+            </button>
+            <button onclick='donE()'><i class='fa fa-check-circle-o fa-lg' aria-hidden='true'
+                                        style='color:green;'></i>DONE
+            </button>
+            <button class="updateNote" onclick="updateNote()"><i class="fa fa-check" aria-hidden="true"></i> OK</button>
+            <button class="closeAlert" onclick="closeAlert()"><i class="fa fa-times" aria-hidden="true"></i>CANCEL
+            </button>
+        </div>
+    </div>
+</div>
+<input type="hidden" id="myId" value="data"/>
+</body>
+</html>

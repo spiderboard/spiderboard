@@ -564,7 +564,7 @@ html {
   }
 }
 
-@media only screen and (max-width:1510px) and (min-width:1251px) {
+@media only screen and (max-width:1510px) and (min-width:1321px) {
   .buttonStyles {
     width: 190px;
   }
@@ -582,6 +582,7 @@ html {
   }
 
   .contactsStyles {
+    height: 37px;
     width: 240px;
   }
 
@@ -614,7 +615,7 @@ html {
   }
 }
 
-@media only screen and (max-width:1250px) and (min-width:1100px) {
+@media only screen and (max-width:1320px) and (min-width:1100px) {
   .previewStyles {
     height: 37px;
     width: 350px;
@@ -676,7 +677,10 @@ html {
 @media only screen and (max-width:1099px) {
   .previewStyles {
     height: 55px;
-    width: auto;
+    white-space: normal;
+    font-weight: 400;
+    text-align: center;
+    width: 300px;
   }
 
   .buttonStyles {
@@ -689,14 +693,7 @@ html {
 
   .linkStyles {
     height: 37px;
-    width: 300px;
-  }
-
-  .previewStyles {
-    height: 90px;
-    white-space: normal;
-    font-weight: 400;
-    text-align: center;
+    width: 157px;
   }
 
   .contactsStyles {
@@ -717,11 +714,11 @@ html {
   }
 
   #jqGrid_url {
-    width: 157px;
+    width: auto;
   }
 
   #jqGrid_text {
-    width: auto;
+    width: 300px;
   }
 
   #jqGrid_contacts {
@@ -760,7 +757,7 @@ html {
   min-width: 800px;
   width: 800px;
   height: 90%;
-  min-height: 680px;
+  min-height: 700px;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: column;
@@ -786,7 +783,8 @@ html {
   -ms-flex-pack: center;
   justify-content: center;
   font-size: 18px;
-  margin-top: 30px;
+  margin-top: 45px;
+  margin-bottom: 10px;
   margin-left: 10%;
   width: 80%;
   height: 50px;
@@ -912,6 +910,7 @@ html {
 
 .sideButtonPressed {
   background-color: #d4d4d4!important;
+  box-shadow: none;
 }
 
 .header {
@@ -967,6 +966,10 @@ table.ui-jqgrid-htable.ui-common-table {
 }
 
 .ui-jqgrid .loading {
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   position: absolute;
   top: 0;
   left: 0;
@@ -982,7 +985,7 @@ table.ui-jqgrid-htable.ui-common-table {
   border: none;
   font-size: 34px;
   color: #3f51b5;
-  padding-top: 20%;
+  padding-top: 18%;
   background-color: rgba(0,0,0,.27);
 }
 
@@ -1000,4 +1003,81 @@ table.ui-jqgrid-htable.ui-common-table {
 #gsh_jqGrid_domain div {
   height: inherit;
   width: inherit;
+}
+
+.cssload-box-loading {
+  width: 49px;
+  height: 49px;
+  margin: auto;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.cssload-box-loading:before {
+  content: '';
+  width: 49px;
+  height: 5px;
+  background: #000;
+  opacity: .1;
+  position: absolute;
+  top: 58px;
+  left: 0;
+  border-radius: 50%;
+  animation: shadow 395ms linear infinite;
+  -o-animation: shadow 395ms linear infinite;
+  -ms-animation: shadow 395ms linear infinite;
+  -webkit-animation: shadow 395ms linear infinite;
+  -moz-animation: shadow 395ms linear infinite;
+}
+
+.cssload-box-loading:after {
+  content: '';
+  width: 49px;
+  height: 49px;
+  background: #3f51b5;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 3px;
+  animation: cssload-animate 395ms linear infinite;
+  -o-animation: cssload-animate 395ms linear infinite;
+  -ms-animation: cssload-animate 395ms linear infinite;
+  -webkit-animation: cssload-animate 395ms linear infinite;
+  -moz-animation: cssload-animate 395ms linear infinite;
+}
+
+@keyframes cssload-animate {
+  17% {
+    border-bottom-right-radius: 3px;
+  }
+
+  25% {
+    transform: translateY(9px) rotate(22.5deg);
+  }
+
+  50% {
+    transform: translateY(18px) scale(1,.9) rotate(45deg);
+    border-bottom-right-radius: 39px;
+  }
+
+  75% {
+    transform: translateY(9px) rotate(67.5deg);
+  }
+
+  100% {
+    transform: translateY(0) rotate(90deg);
+  }
+}
+
+@keyframes shadow {
+  0%, 100% {
+    transform: scale(1,1);
+  }
+
+  50% {
+    transform: scale(1.2,1);
+  }
 }
